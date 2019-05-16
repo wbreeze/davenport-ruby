@@ -3,5 +3,7 @@ History.txt
 Manifest.txt
 README.rdoc
 Rakefile
+ext/davenport/extconf.rb
+ext/davenport/davenport.c
 lib/davenport.rb
 test/test_davenport.rb
