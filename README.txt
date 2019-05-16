@@ -1,0 +1,62 @@
+= davenport
+
+home  :: https://github.com/wbreeze/davenport-ruby
+code  :: https://github.com/wbreeze/davenport-ruby
+rdoc  :: FIX (url)
+bugs  :: https://github.com/wbreeze/davenport-ruby/issues
+C-lib :: https://github.com/wbreeze/davenport
+
+== DESCRIPTION:
+
+A ranking is a partial order that, given some set of alternatives, places
+some before others.
+A preference graph, given some number of rankings, expresses the combination
+of all of those rankings. It is a directed, weighted graph in which the
+nodes represent the alternatives and the edges represent preferences.
+
+Use this to build a preference graph from individual rankings and compute
+a Kemeny order, aggregated preference that minimizes the number of
+pair-wise disagreements with the individual rankings.
+
+This is a Ruby binding built around a C language implementation of
+Davenport's algorithm, found on github at
+[wbreeze/davenport](https://github.com/wbreeze/davenport)
+
+== FEATURES/PROBLEMS:
+
+This is a work in progress.
+
+== SYNOPSIS:
+
+    pg = PreferenceGraph.new(4)
+    pg.add_preference([1, 3, 2, 4]);
+    pg.add_preference([1, [3, 2], 4]);
+    pg.add_preference([2, 1, 3, 4]);
+    pg.add_preference([1, 3, 2, 4]);
+    pg.davenport
+    => [1, 3, 2, 4]
+
+== REQUIREMENTS:
+
+See .ruby-version for development version.
+
+== INSTALL:
+
+    gem install davenport
+
+== DEVELOPERS:
+
+After checking out the source, run:
+
+  $ rake newb
+
+This task will install any missing dependencies, run the tests/specs,
+and generate the RDoc.
+
+== LICENSE:
+
+GNU Lesser General Public License v3 (LGPL-3.0)
+
+See [LICENSE](./LICENSE)
+
+Copyright (c) 2019 Douglas Lovell
