@@ -26,4 +26,20 @@ class TestDavenport < Minitest::Test
       pg.add_preference(Object.new)
     end
   end
+
+  def test_add_preference_array_type_error
+    pg = Davenport::PreferenceGraph.new(3)
+    assert_raises(TypeError) do
+      a = [Object.new, Object.new, Object.new];
+      pg.add_preference(a)
+    end
+  end
+
+  def test_add_preference_array_length_error
+    pg = Davenport::PreferenceGraph.new(3)
+    assert_raises(Davenport::PreferenceGraphCountException) do
+      a = [1, 1];
+      pg.add_preference(a)
+    end
+  end
 end
