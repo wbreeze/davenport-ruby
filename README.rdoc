@@ -24,21 +24,32 @@ Davenport's algorithm, found on github at
 
 == FEATURES/PROBLEMS:
 
-This is a work in progress.
+Please see https://github.com/wbreeze/davenport-ruby/issues
+for a list of any issues and add your own there, or contact
+the author.
 
 == SYNOPSIS:
 
-    pg = PreferenceGraph.new(4)
+    pg = Davenport::PreferenceGraph.new(4)
     pg.add_preference([1, 3, 2, 4]);
-    pg.add_preference([1, [3, 2], 4]);
+    pg.add_preference([1, 2, 2, 4]);
     pg.add_preference([2, 1, 3, 4]);
     pg.add_preference([1, 3, 2, 4]);
     pg.davenport
     => [1, 3, 2, 4]
 
+The single array parameter for `add_preference` has a rank number for the item
+at the corresponding index. For example, with four items, `[1, 2, 2, 4]`
+assigns rank 1 to the first item, 2 to the second and third items, and 4 to the
+final item. The preference, `[2, 2, 2, 1]` ranks the last item first and all of
+the others equally after it.
+
 == REQUIREMENTS:
 
-See .ruby-version for development version.
+See .ruby-version for the version of Ruby used in development.
+
+This requires the Davenport library installed according to
+{wbreeze/davenport}[https://github.com/wbreeze/davenport]
 
 == INSTALL:
 
