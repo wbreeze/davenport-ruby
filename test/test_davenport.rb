@@ -9,7 +9,7 @@ class TestDavenport < Minitest::Test
   def test_one_ranking
     node_ct = 4;
     pg = Davenport::PreferenceGraph.new(node_ct)
-    expected_ranking = [1, 3, 2, 4];
+    expected_ranking = [3, 4, 1, 2];
     pg.add_preference(expected_ranking);
     assert_equal(expected_ranking, pg.davenport);
   end
@@ -41,5 +41,14 @@ class TestDavenport < Minitest::Test
       a = [1, 1];
       pg.add_preference(a)
     end
+  end
+
+  def test_ranking_two
+    pg = Davenport::PreferenceGraph.new(4)
+    pg.add_preference([1, 3, 2, 4])
+    pg.add_preference([1, 2, 2, 4])
+    pg.add_preference([2, 1, 3, 4])
+    pg.add_preference([1, 3, 2, 4])
+    assert_equal([1, 3, 2, 4], pg.davenport)
   end
 end
