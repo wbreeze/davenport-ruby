@@ -6,4 +6,4 @@ unless have_library('davenport', 'preference_graph_add_preference')
 end
 
 create_header
-create_makefile 'davenport/davenport'
+create_makefile 'davenport/davenport_ruby'
