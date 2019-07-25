@@ -105,7 +105,7 @@ VALUE davenport(VALUE self)
   return pref;
 }
 
-void Init_davenport()
+void Init_davenport_ruby()
 {
   VALUE mDv = rb_define_module("Davenport");
   VALUE cPg = rb_define_class_under(mDv, "PreferenceGraph", rb_cData);

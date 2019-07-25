@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     'Rakefile',
     'History.txt'
   ].flatten
-  s.extensions << 'ext/davenport/extconf.rb'
+  s.extensions << 'ext/davenport_ruby/extconf.rb'
   s.add_development_dependency 'rake-compiler', '~> 1.0'
   s.requirements << 'libdavenport'
 end

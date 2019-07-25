@@ -1,4 +1,4 @@
-require 'davenport/davenport'
+require 'davenport_ruby/davenport_ruby'
 
 module Davenport
   VERSION = "1.0.1"
