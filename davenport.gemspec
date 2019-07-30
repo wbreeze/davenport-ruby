@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'davenport'
-  s.version = '1.0.2.pre'
-  s.date = '2019-07-24'
+  s.version = '1.0.2'
+  s.date = '2019-07-29'
   s.license = 'LGPL-3.0'
   s.summary = 'Ruby binding for the Davenport library'
   s.description = <<~DESCR.gsub("\n", ' ')
