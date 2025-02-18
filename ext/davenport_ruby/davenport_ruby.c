@@ -90,7 +90,9 @@ VALUE davenport(VALUE self)
 
   AggregateSolution *asol = aggregate_solution_create(node_ct);
   Davenport *dv = davenport_create(majority_graph, node_ct);
-  davenport_set_solution_callback(dv, &aggregate_solution_add_solution, asol);
+  davenport_set_solution_callback(dv,
+    (DavenportSolutionCallback)&aggregate_solution_add_solution,
+    asol);
   davenport_compute(dv);
   dv = davenport_destroy(dv);
 
@@ -108,7 +110,7 @@ VALUE davenport(VALUE self)
 void Init_davenport_ruby()
 {
   VALUE mDv = rb_define_module("Davenport");
-  VALUE cPg = rb_define_class_under(mDv, "PreferenceGraph", rb_cData);
+  VALUE cPg = rb_define_class_under(mDv, "PreferenceGraph", rb_cObject);
   rb_define_alloc_func(cPg, pg_allocate);
   rb_define_method(cPg, "initialize", initialize, 1);
   rb_define_method(cPg, "add_preference", add_preference, 1);

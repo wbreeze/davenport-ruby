@@ -4,3 +4,8 @@
 
   * Initialize Ruby gem using Hoe
 
+=== 1.1.1 / 2025-02-18
+
+* 1 major enhancement
+
+  * Compile with ruby 3.4.2

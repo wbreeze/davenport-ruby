@@ -59,17 +59,19 @@ This requires the Davenport library installed according to
 
 After checking out the source, run:
 
-  $ rake newb
+  $ rake compile
 
 This task will install any missing dependencies, run the tests/specs,
 and generate the RDoc.
 
+See https://guides.rubygems.org/make-your-own-gem/ for how to publish.
+
 == LICENSE:
 
-GNU Lesser General Public License v3 (LGPL-3.0)
+GNU Lesser General Public License v3 (LGPL-3.0) or later
 
 See the file,
 {LICENSE}[https://github.com/wbreeze/davenport-ruby/blob/master/LICENSE]
 for the full text.
 
-Copyright (c) 2019 Douglas Lovell
+Copyright (c) 2019, 2025 Douglas Lovell
